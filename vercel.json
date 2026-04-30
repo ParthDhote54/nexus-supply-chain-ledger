@@ -1,21 +1,16 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
   "outputDirectory": "dist/client",
   "framework": null,
   "functions": {
     "api/index.mjs": {
-      "runtime": "nodejs20",
       "includeFiles": "dist/server/**"
     }
   },
   "rewrites": [
+    { "source": "/", "destination": "/api/index.mjs" },
     {
-      "source": "/((?!assets/|favicon\\.ico|robots\\.txt|.*\\.[a-zA-Z0-9]+$).*)",
-      "destination": "/api/index.mjs"
-    },
-    {
-      "source": "/",
+      "source": "/((?!assets/|.*\\.[a-zA-Z0-9]+$).*)",
       "destination": "/api/index.mjs"
     }
   ]
