@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: nexus-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 8787
+      - key: NODE_VERSION
+        value: 20

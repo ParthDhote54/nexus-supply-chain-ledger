@@ -1,0 +1,9 @@
+node_modules
+.env
+dist
+build
+.cache
+blockchain/artifacts
+blockchain/cache
+blockchain/node_modules
+backend/node_modules
