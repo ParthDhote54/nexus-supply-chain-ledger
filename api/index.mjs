@@ -1,5 +1,4 @@
-import handler from "../dist/server/server.js";
-
-export default async function (req, res) {
-  return handler(req, res);
+export default async function handler(req, res) {
+  const server = await import("../dist/server/server.js");
+  return server.default(req, res);
 }

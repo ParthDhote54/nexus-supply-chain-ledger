@@ -1,8 +1,13 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/client",
-  "framework": null,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "functions": {
+    "api/index.mjs": {
+      "runtime": "nodejs18.x",
+      "includeFiles": "dist/server/**"
+    }
+  },
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/dist/client/assets/$1" },
+    { "src": "/(.*)", "dest": "api/index.mjs" }
   ]
 }
